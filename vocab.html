@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://getbootstrap.com/docs/4.3/examples/floating-labels/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>English Vocabulary Quiz</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    .btn-outline-dark.disabled, .btn-outline-dark:disabled {
+    color: #fff;
+    opacity: 1.0;
+    background-color: #007bff;
+    border-color: #007bff;
+
+   }
+.btn-primary {
+    color: #343a40;
+    background-color: transparent;
+
+}
+
+.ansbtn.btn-primary:hover, .ansbtn.btn-primary:active, .ansbtn.btn-primary.active, .open>.dropdown-toggle.ansbtn.btn-primary {
+    color: #343a40;
+    background-color: transparent;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  height: 3.125rem;
+  padding: .75rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+    </style>
+    <!-- Custom styles for this template -->
+    <!--<link href="./vocab_files/floating-labels.css" rel="stylesheet">-->
+  </head>
+  <body>
+    <form class="form-signin">
+<!--
+  <div class="text-center mb-4">
+    <img class="mb-4" src="./vocab_files/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+-->
+<!--
+<div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+  </label>
+</div>
+-->
+
+  <div class="form-label-group">
+
+  <button class="btn btn-lg btn-primary btn-block btn-outline-dark" disabled type="button" id="question">question</button>
+  <hr>
+  <button class="btn btn-lg btn-primary btn-block ansbtn" type="button" id="answer1" onclick="answer_clicked(1)">answer 1</button>
+  <button class="btn btn-lg btn-primary btn-block ansbtn" type="button" id="answer2" onclick="answer_clicked(2)">answer 2</button>  
+  <button class="btn btn-lg btn-primary btn-block ansbtn" type="button" id="answer3" onclick="answer_clicked(3)">answer 3</button> 
+  <button class="btn btn-lg btn-primary btn-block ansbtn" type="button" id="answer4" onclick="answer_clicked(4)">answer 4</button> 
+
+<div class="progress btn-block">
+  <div class="progress-bar progress-bar-striped bg-success" id="progress" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+  </div>
+
+
+<!--
+  <p class="mt-5 mb-3 text-muted text-center">© 2017-2019</p>
+-->
+
+</form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+var shuffle = function (a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+function randomIntFromInterval(min,max) // min and max included
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+var words = [
+["beautiful","יפה"],
+["ugly", "מכוער"],
+["tail","זנב"],
+["face","פנים"],
+["forest","יער"],
+["leaves","עלים"],
+["plant","צמח"],
+["climb","מטפס"],
+["whale","לויתן"],
+["swim","שוחה"],
+["warm","חם"],
+["place","מקום"],
+["work","עבודה"],
+["feed","מאכיל"],
+["night","לילה"],
+["morning","בוקר"],
+["afternoon","אחר הצהריים"],
+["evening","ערב"],
+["fly","עף"],
+["cave","מערה"],
+["lake","אגם"],
+["through","דרך"],
+["around","מסביב"],
+["hunt","צד"],
+["catch","תופס"],
+["look for","מחפש"],
+["gate","שער"],
+["grass","דשא"],
+["also","גם"],
+["head","ראש"]
+];
+
+var answers_complete = [];
+var answers_left = [];
+var curr_q = 0;
+var correct_answer = 1;
+
+var init = function(){
+  for(var i=0;i<words.length;i++)
+    answers_left.push(i);
+  answers_left = shuffle(answers_left);
+  answers_complete = [];
+}
+
+var nextAnswer= function(){
+//  Math.floor(Math.random() * 10);
+  $("#progress").css("width",""+(Math.floor(100.0*answers_complete.length/words.length))+"%")
+  curr_q = answers_left.pop()
+  var other_answers=[];
+  for(var i=0;i<words.length;i++){
+    if(curr_q != i)
+      other_answers.push(words[i][1]);
+  }
+  other_answers = shuffle(other_answers);
+  while(other_answers.length >3) other_answers.pop();
+  correct_answer = randomIntFromInterval(1,4);
+  console.log(correct_answer);
+  for(var i=1;i<4+1;i++){
+    var word = "";
+    if(i==correct_answer)
+      word = words[curr_q][1];
+    else word = other_answers.pop();
+    $("#answer"+i).html(word);
+  }
+  $("#question").html(words[curr_q][0]);
+}
+
+var answer_clicked = function(ansnum){
+  if(ansnum==correct_answer) {
+//    alert("good");
+    answers_complete.push(curr_q);
+  } else {
+    answers_left.unshift(curr_q);
+    $("#answer"+ansnum).animate({ backgroundColor: "red" }, "slow");
+//    alert("bad");
+  }
+  $("#answer"+correct_answer).animate({ backgroundColor: "green" }, "slow");
+  setTimeout(function(){
+        console.log("correct_answer="+correct_answer+" ansnum="+ansnum)
+  	for(var i=1;i<5;i++){
+	$("#answer"+i).stop();
+          $("#answer"+i).css("backgroundColor", "transparent" );
+	  $("#answer"+ansnum).blur();
+          }
+	  
+           
+	  if(answers_left.length==0){
+	    $("#progress").css("width","100%")
+	    alert("כל הכבוד. סיימת את כל השאלות");
+	    init();
+	  }
+	  nextAnswer();
+  }, 3000);
+}
+
+init();
+nextAnswer();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
+
